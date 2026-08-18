@@ -7,6 +7,6 @@ export const Button = ({
   attributes = {},
 } = {}) => {
   return `<button class="btn btn--${variant}" ${attributes}>
-            <span>${icon}</span><span>${children}</span>
+            <span class="btn__icon">${icons[icon]}</span><span>${children}</span>
           </button>`;
 };

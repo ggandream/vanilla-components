@@ -1,0 +1,39 @@
+/* Button component */
+
+.btn {
+  border: 1px solid var(--color-cocoa-100);
+  border-radius: 10px;
+  padding: 0 20px;
+  height: 40px;
+  margin: 1px;
+  font-family: "ElmsSans";
+  font-weight: 700;
+  font-size: 14px;
+  background: transparent;
+
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.btn--primary {
+  background-color: var(--color-cocoa-100);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-cocoa-200);
+  color: var(--color-white);
+}
+
+.btn--secondary {
+  background-color: var(--color-vanilla-100);
+  color: var(--color-cocoa-200);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-cork);
+  color: var(--color-cocoa-200);
+}
