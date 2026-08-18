@@ -1,0 +1,181 @@
+@font-face {
+  font-family: "ElmsSans";
+  src: url("./assets/fonts/Elms_Sans/ElmsSans-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ElmsSans";
+  src: url("./assets/fonts/Elms_Sans/ElmsSans-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "ElmsSans";
+  src: url("./assets/fonts/Elms_Sans/ElmsSans-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "ElmsSans";
+  src: url("./assets/fonts/Elms_Sans/ElmsSans-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "ElmsSans";
+  src: url("./assets/fonts/Elms_Sans/ElmsSans-ExtraBold.ttf");
+  font-weight: 800;
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-vanilla-100: #f9f3dd;
+  --color-vanilla-200: #dcd1b0;
+  --color-gold-100: #f9ab51;
+  --color-gold-200: #ff8215;
+  --color-gold-300: #e86009;
+  --color-gold-400: #b93905;
+  --color-cork: #d59756;
+  --color-cocoa-100: #5d4034;
+  --color-cocoa-200: #3d251b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "ElmsSans";
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100dvh;
+}
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.sidebar {
+  border-right: 1px solid var(--color-vanilla-200);
+  height: 100dvh;
+  width: 20%;
+  padding: 32px 16px 80px 0;
+}
+
+.content {
+  width: 80%;
+  padding: 0 50px;
+}
+
+.card {
+  width: 100%;
+  padding: 32px 0 48px 0;
+}
+
+.card-title {
+  margin: 0;
+  color: #3d251b;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid var(--color-vanilla-200);
+  display: flex;
+  justify-content: center;
+
+  padding: 10px 40px;
+}
+
+.nav {
+  max-width: 1440px;
+  width: 100%;
+}
+
+.nav__logo {
+  height: 48px;
+}
+
+.menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.menu__list li {
+  width: 100%;
+}
+
+.list__link {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  color: var(--color-cocoa-100);
+  padding: 6px 12px;
+}
+
+@media (hover: hover) {
+  .list__link:hover {
+    background-color: #f9f3dd;
+  }
+}
+
+.list__link:focus {
+  background-color: var(--color-gold-200);
+  color: var(--color-cocoa-200);
+}
+
+/* Button component */
+
+.btn {
+  border: 1px solid var(--color-cocoa-100);
+  border-radius: 10px;
+  padding: 0 20px;
+  height: 40px;
+  margin: 1px;
+  font-family: "ElmsSans";
+  font-weight: 700;
+  font-size: 14px;
+  background: transparent;
+
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.btn--primary {
+  background-color: var(--color-cocoa-100);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-cocoa-200);
+  color: var(--color-white);
+}
+
+.btn--secondary {
+  background-color: var(--color-vanilla-100);
+  color: var(--color-cocoa-200);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-cork);
+  color: var(--color-cocoa-200);
+}
