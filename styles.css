@@ -102,6 +102,11 @@ main {
 
   padding: 10px 40px;
 }
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .nav {
   max-width: 1440px;
@@ -142,5 +147,18 @@ main {
 
 .list__link:focus {
   background-color: var(--color-gold-200);
-  color: var(--color-cocoa-200);
+}
+
+.link--active {
+  background-color: var(--color-gold-200);
+}
+
+.text {
+  width: 70%;
+  text-align: left;
+  line-height: 32px;
+  font-family: "ElmSans", system-ui;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--font-color);
 }

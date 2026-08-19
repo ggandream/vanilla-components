@@ -6,34 +6,26 @@
     <title>Vanilla Components</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="./components/Button/button.css" />
+    <link rel="stylesheet" href="./components/Title/title.css" />
 
     <script src="app.js" type="module"></script>
   </head>
   <body>
     <main>
-      <header class="header">
-        <nav class="nav">
-          <img
-            class="nav__logo"
-            src="./assets/images/vanilla-logo.webp"
-            alt=""
-          />
-        </nav>
-      </header>
+      <site-header class="header"></site-header>
       <div class="container">
-        <aside class="sidebar">
-          <nav class="sidebar__menu">
-            <ul class="menu__list">
-              <li><a class="list__link" href="#">Button</a></li>
-              <li><a class="list__link" href="#">Title</a></li>
-            </ul>
-          </nav>
-        </aside>
-        <section class="content">
+        <site-sidebar class="sidebar"></site-sidebar>
+        <section class="content" id="main-page">
           <article class="card">
-            <header class="card-header">
-              <h1 class="card-title">Tabs</h1>
-            </header>
+            <h1 class="title">Vanilla Components</h1>
+            <p class="text">
+              A collection of reusable UI components built with pure HTML, CSS,
+              and JavaScript. This project exists to explore and strengthen core
+              web development fundamentals by building common UI patterns from
+              scratch, without relying on frameworks like React, Vue, or
+              Angular. Each component is implemented using only native browser
+              APIs and standard web technologies.
+            </p>
           </article>
         </section>
       </div>
