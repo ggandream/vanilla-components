@@ -1,0 +1,10 @@
+.search__btn {
+  border: 1px solid var(--color-vanilla-200);
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(249, 243, 221, 0.2);
+}
+
+.search__icon {
+  color: var(--color-vanilla-300);
+}
