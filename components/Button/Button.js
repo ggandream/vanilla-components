@@ -9,7 +9,7 @@ export const Button = ({
 } = {}) => {
   const attrs = Object.entries(attributes)
     .map(([key, value]) => `${key}="${value}"`)
-    .join();
+    .join(" ");
 
   return href
     ? `<a class="btn btn--${variant}" href="${href}" ${attrs}>

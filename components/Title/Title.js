@@ -1,3 +1,3 @@
 export const Title = ({ children = "Title" } = {}) => {
-  return `<h1 class="card-title">${children}</h1>`;
+  return `<h1 class="title">${children}</h1>`;
 };

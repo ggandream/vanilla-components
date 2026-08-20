@@ -41,11 +41,23 @@
   --color-cocoa-200: #3d251b;
 
   /* Mode colors */
-  --backgroung-color: #fefefc;
+  --backgroung-color: #f8f7f2;
   --font-color: #341f13;
 }
 
 [data-theme="dark"] {
+  --color-white: #ffffff;
+  --color-vanilla-100: #f9f3dd;
+  --color-vanilla-200: #dcd1b0;
+  --color-gold-100: #f9ab51;
+  --color-gold-200: #ff8215;
+  --color-gold-300: #e86009;
+  --color-gold-400: #b93905;
+  --color-cork: #d59756;
+  --color-cocoa-100: #5d4034;
+  --color-cocoa-200: #3d251b;
+
+  /* Mode colors */
   --backgroung-color: #696556;
   --font-color: #fefefc;
 }
@@ -111,6 +123,9 @@ header {
 .nav {
   max-width: 1440px;
   width: 100%;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav__logo {
@@ -161,4 +176,72 @@ header {
   font-size: 18px;
   font-weight: 400;
   color: var(--font-color);
+}
+
+/* title */
+
+.title {
+  margin: 0;
+  color: var(--font-color);
+}
+
+/* ACTION ICON */
+
+.action-icon {
+  border: 1px solid var(--color-cocoa-100);
+  border-radius: 10px;
+  padding: 0;
+  height: 38px;
+  width: 38px;
+  margin: 1px;
+
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-icon__icon {
+  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+}
+
+.action-icon__icon > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.action-icon--primary {
+  background-color: var(--color-cocoa-100);
+
+  .action-icon__icon {
+    color: var(--color-white);
+  }
+}
+
+.action-icon--secondary {
+  background-color: var(--color-vanilla-100);
+
+  .action-icon__icon {
+    color: var(--color-cocoa-200);
+  }
+}
+
+@media (hover: hover) {
+  .action-icon--primary:hover {
+    background-color: var(--color-cocoa-200);
+    color: var(--color-white);
+  }
+
+  .action-icon--secondary:hover {
+    background-color: var(--color-cork);
+    color: var(--color-cocoa-200);
+  }
+}
+
+.hidden {
+  display: none;
 }

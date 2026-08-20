@@ -16,6 +16,8 @@
 
 .action-icon__icon {
   color: var(--color-white);
+  width: 24px;
+  height: 24px;
 }
 
 .action-icon__icon > svg {
@@ -25,7 +27,18 @@
 
 .action-icon--primary {
   background-color: var(--color-cocoa-100);
-  color: var(--color-white);
+
+  .action-icon__icon {
+    color: var(--color-white);
+  }
+}
+
+.action-icon--secondary {
+  background-color: var(--color-vanilla-100);
+
+  .action-icon__icon {
+    color: var(--color-cocoa-200);
+  }
 }
 
 @media (hover: hover) {
@@ -33,4 +46,13 @@
     background-color: var(--color-cocoa-200);
     color: var(--color-white);
   }
+
+  .action-icon--secondary:hover {
+    background-color: var(--color-cork);
+    color: var(--color-cocoa-200);
+  }
+}
+
+.hidden {
+  display: none;
 }

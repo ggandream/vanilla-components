@@ -7,4 +7,6 @@ export const icons = {
   save: await loadIcon("save"),
   github: await loadIcon("github"),
   search: await loadIcon("search"),
+  sun: await loadIcon("sun"),
+  moon: await loadIcon("moon"),
 };
