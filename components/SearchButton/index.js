@@ -7,7 +7,8 @@ if (card) {
   const component = SearchButton({
     shortcut: "Ctrl + k",
     icon: "search",
-    attributes: { command: "show-modal", commandfor: "search__dialog" },
+    commandfor: "search__example",
+    command: "show-modal",
   });
 
   const title = Title({ children: "SearchButton" });

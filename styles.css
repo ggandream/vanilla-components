@@ -30,7 +30,7 @@
 
 :root {
   --color-white: #ffffff;
-  --color-vanilla-100: #f9f3dd;
+  --color-vanilla-100: #f1e4b2;
   --color-vanilla-200: #dcd1b0;
   --color-vanilla-300: #dcd1b0;
   --color-gold-100: #f9ab51;
@@ -42,9 +42,11 @@
   --color-cocoa-200: #3d251b;
 
   /* Mode colors */
-  --background-color: #fff;
+  --background-color: #fdfbf4;
   --background-color-2: #dcd1b0;
   --font-color: #341f13;
+  --hover-color: #f1e4b2;
+  --focus-color: #f9ab51;
 }
 
 [data-theme="dark"] {
@@ -64,6 +66,8 @@
   --background-color: #696556;
   --background-color-2: #5d4034;
   --font-color: #fefefc;
+  --hover-color: #ff8215;
+  --focus-color: #b93905;
 }
 
 * {

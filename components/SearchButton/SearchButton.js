@@ -1,11 +1,17 @@
 import { icons } from "../../icons/icon.js";
 
-export const SearchButton = ({ shortcut = "", icon, attributes = {} } = {}) => {
+export const SearchButton = ({
+  shortcut = "",
+  icon,
+  commandfor,
+  command,
+  attributes = {},
+} = {}) => {
   const otherAttrs = Object.entries(attributes)
     .map(([key, value]) => `${key}="${value}"`)
     .join(" ");
 
-  return `<button type="button" class="search__btn" ${otherAttrs}>
+  return `<button type="button" class="search__btn" command="${command}", commandfor="${commandfor}" ${otherAttrs}>
               <div>
                 <span class="search__icon">${icons[icon]}</span>
                 <span class="search__text">Search</span>

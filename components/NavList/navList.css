@@ -20,16 +20,27 @@
   padding: 6px 12px;
 }
 
+.list__link--search__components {
+  height: 50px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 @media (hover: hover) {
   .list__link:hover {
-    background-color: #f9f3dd;
+    background-color: var(--hover-color);
   }
 }
 
 .list__link:focus {
-  background-color: var(--color-gold-200);
+  background-color: var(--focus-color);
 }
 
 .link--active {
-  background-color: var(--color-gold-200);
+  background-color: var(--focus-color);
+}
+
+.hidden {
+  display: none;
 }

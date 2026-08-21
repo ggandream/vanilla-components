@@ -1,6 +1,7 @@
 import { ActionIcon } from "./components/ActionIcon/ActionIcon.js";
 import { NavList } from "./components/NavList/NavList.js";
 import { SearchButton } from "./components/SearchButton/SearchButton.js";
+import { SearchModal } from "./components/SearchModal/SearchModal.js";
 import { components } from "./data/components.js";
 
 const navList = NavList({ items: components, variant: "menu__list" });
@@ -20,7 +21,15 @@ const darkMode = ActionIcon({
 const searchBtn = SearchButton({
   shortcut: "Ctrl + k",
   icon: "search",
-  attributes: { command: "show-modal", commandfor: "search__dialog" },
+  command: "show-modal",
+  commandfor: "search__dialog",
+});
+
+const searchModal = SearchModal({
+  icon: "search",
+  items: components,
+  variant: "search__components",
+  id: "search__dialog",
 });
 class SiteHeader extends HTMLElement {
   connectedCallback() {
@@ -50,12 +59,23 @@ class SiteSidebar extends HTMLElement {
   }
 }
 
+class SiteSearch extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `${searchModal}`;
+  }
+}
+
 customElements.define("site-header", SiteHeader);
 customElements.define("site-sidebar", SiteSidebar);
+customElements.define("site-search", SiteSearch);
 
 const html = document.querySelector("html");
 const lightModeBtn = document.querySelector("[data-id='light-mode']");
 const darkModeBtn = document.querySelector("[data-id='dark-mode']");
+const searchInputs = document.querySelectorAll(".search__input");
+const componentsLinks = document.querySelectorAll(
+  ".list__link--search__components",
+);
 
 lightModeBtn.addEventListener("click", () => {
   html.setAttribute("data-theme", "0");
@@ -67,4 +87,21 @@ darkModeBtn.addEventListener("click", () => {
   html.setAttribute("data-theme", "dark");
   lightModeBtn.classList.remove("hidden");
   darkModeBtn.classList.add("hidden");
+});
+
+searchInputs.forEach((searchInput) => {
+  searchInput.addEventListener("input", (e) => {
+    console.log(e.target.value);
+    componentsLinks.forEach((link) =>
+      link.parentElement.classList.remove("hidden"),
+    );
+    Array.from(componentsLinks)
+      .filter(
+        (link) =>
+          !link.textContent
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase()),
+      )
+      .map((link) => link.parentElement.classList.add("hidden"));
+  });
 });

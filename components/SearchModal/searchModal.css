@@ -32,10 +32,13 @@
   font-family: "ElmsSans";
   font-weight: 400;
   font-size: 18px;
+  background: transparent;
+  color: var(--font-color);
 }
 
 .search__input:focus-visible {
   outline: 1px solid transparent;
+  background: transparent;
 }
 .search__components {
   padding: 0 0 0 4px;

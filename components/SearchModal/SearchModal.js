@@ -1,9 +1,9 @@
 import { icons } from "../../icons/icon.js";
 import { NavList } from "../NavList/NavList.js";
 
-export const SearchModal = ({ icon, items = [], variant = "" }) => {
+export const SearchModal = ({ icon, items = [], variant = "", id }) => {
   const navList = NavList({ items: items, variant: variant });
-  return `<dialog id="search__dialog" closedby="any" class="search__dialog">
+  return `<dialog id="${id}" closedby="any" class="search__dialog">
               <div class="search__entry">
                 <span class="search__icon"
                   >${icons[icon]}</span>
