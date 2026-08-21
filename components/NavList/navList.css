@@ -1,0 +1,35 @@
+.menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.menu__list li {
+  width: 100%;
+}
+
+.list__link {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 6px 12px;
+}
+
+@media (hover: hover) {
+  .list__link:hover {
+    background-color: #f9f3dd;
+  }
+}
+
+.list__link:focus {
+  background-color: var(--color-gold-200);
+}
+
+.link--active {
+  background-color: var(--color-gold-200);
+}

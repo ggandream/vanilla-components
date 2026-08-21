@@ -1,4 +1,9 @@
 import { ActionIcon } from "./components/ActionIcon/ActionIcon.js";
+import { NavList } from "./components/NavList/NavList.js";
+import { SearchButton } from "./components/SearchButton/SearchButton.js";
+import { components } from "./data/components.js";
+
+const navList = NavList({ items: components, variant: "menu__list" });
 
 const lightMode = ActionIcon({
   variant: "light hidden",
@@ -12,6 +17,11 @@ const darkMode = ActionIcon({
   attributes: { "data-id": "dark-mode" },
 });
 
+const searchBtn = SearchButton({
+  shortcut: "Ctrl + k",
+  icon: "search",
+  attributes: { command: "show-modal", commandfor: "search__dialog" },
+});
 class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<header>
@@ -21,8 +31,8 @@ class SiteHeader extends HTMLElement {
                             src="../../assets/images/vanilla-logo.webp"
                             alt=""
                         />
-                        <div>
-
+                        <div class="nav__btns">
+                        ${searchBtn}
                         ${darkMode} ${lightMode}
                         </div>
 
@@ -34,18 +44,7 @@ class SiteSidebar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<aside>
                             <nav class="sidebar__menu">
-                                <ul class="menu__list">
-                                <li>
-                                    <a class="list__link" href="/" onclick="route()">Home</a>
-                                </li>
-                                <li>
-                                    <a class="list__link" href="components/Button/">Button</a>
-                                </li>
-                                <li>
-                                    <a class="list__link" href="components/ActionIcon/">ActionIcon</a>
-                                </li>
-                                <li><a class="list__link" href="#">Title</a></li>
-                                </ul>
+                                ${navList}
                             </nav>
                         </aside>`;
   }
