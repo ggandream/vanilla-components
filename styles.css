@@ -42,7 +42,8 @@
   --color-cocoa-200: #3d251b;
 
   /* Mode colors */
-  --backgroung-color: #f8f7f2;
+  --background-color: #fff;
+  --background-color-2: #dcd1b0;
   --font-color: #341f13;
 }
 
@@ -60,7 +61,8 @@
   --color-cocoa-200: #3d251b;
 
   /* Mode colors */
-  --backgroung-color: #696556;
+  --background-color: #696556;
+  --background-color-2: #5d4034;
   --font-color: #fefefc;
 }
 
@@ -72,7 +74,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: "ElmsSans";
-  background-color: var(--backgroung-color);
+  background-color: var(--background-color);
 }
 main {
   width: 100%;
@@ -185,63 +187,6 @@ header {
 .title {
   margin: 0;
   color: var(--font-color);
-}
-
-/* ACTION ICON */
-
-.action-icon {
-  border: 1px solid var(--color-cocoa-100);
-  border-radius: 10px;
-  padding: 0;
-  height: 38px;
-  width: 38px;
-  margin: 1px;
-
-  background: transparent;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.action-icon__icon {
-  color: var(--color-white);
-  width: 24px;
-  height: 24px;
-}
-
-.action-icon__icon > svg {
-  width: 24px;
-  height: 24px;
-}
-
-.action-icon--primary {
-  background-color: var(--color-cocoa-100);
-
-  .action-icon__icon {
-    color: var(--color-white);
-  }
-}
-
-.action-icon--secondary {
-  background-color: var(--color-vanilla-100);
-
-  .action-icon__icon {
-    color: var(--color-cocoa-200);
-  }
-}
-
-@media (hover: hover) {
-  .action-icon--primary:hover {
-    background-color: var(--color-cocoa-200);
-    color: var(--color-white);
-  }
-
-  .action-icon--secondary:hover {
-    background-color: var(--color-cork);
-    color: var(--color-cocoa-200);
-  }
 }
 
 .hidden {

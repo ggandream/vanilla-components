@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .action-icon__icon {
@@ -38,6 +39,24 @@
 
   .action-icon__icon {
     color: var(--color-cocoa-200);
+  }
+}
+
+.action-icon--dark {
+  background-color: rgba(249, 243, 221, 0.2);
+  border: 1px solid var(--color-vanilla-200);
+
+  .action-icon__icon {
+    color: var(--color-cocoa-100);
+  }
+}
+
+.action-icon--light {
+  background-color: rgba(249, 243, 221, 0.2);
+  border: 1px solid var(--color-vanilla-200);
+
+  .action-icon__icon {
+    color: var(--color-white);
   }
 }
 

@@ -1,14 +1,13 @@
 import { ActionIcon } from "./components/ActionIcon/ActionIcon.js";
-import { icons } from "./icons/icon.js";
 
 const lightMode = ActionIcon({
-  variant: "primary hidden",
+  variant: "light hidden",
   icon: "sun",
   attributes: { "data-id": "light-mode" },
 });
 
 const darkMode = ActionIcon({
-  variant: "secondary",
+  variant: "dark",
   icon: "moon",
   attributes: { "data-id": "dark-mode" },
 });
@@ -22,8 +21,10 @@ class SiteHeader extends HTMLElement {
                             src="../../assets/images/vanilla-logo.webp"
                             alt=""
                         />
+                        <div>
 
                         ${darkMode} ${lightMode}
+                        </div>
 
                         </nav>
                      </header>`;
