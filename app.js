@@ -76,18 +76,26 @@ const searchInputs = document.querySelectorAll(".search__input");
 const componentsLinks = document.querySelectorAll(
   ".list__link--search__components",
 );
-
+// THEME OR MODE FEATURE
 lightModeBtn.addEventListener("click", () => {
   html.setAttribute("data-theme", "0");
   lightModeBtn.classList.add("hidden");
   darkModeBtn.classList.remove("hidden");
+  localStorage.setItem("theme", "0");
 });
 
 darkModeBtn.addEventListener("click", () => {
   html.setAttribute("data-theme", "dark");
   lightModeBtn.classList.remove("hidden");
   darkModeBtn.classList.add("hidden");
+  localStorage.setItem("theme", "dark");
 });
+
+const localMode = localStorage.getItem("theme");
+
+if (localMode) html.setAttribute("data-theme", localMode);
+
+// SEARCH FEATURE
 
 searchInputs.forEach((searchInput) => {
   searchInput.addEventListener("input", (e) => {
