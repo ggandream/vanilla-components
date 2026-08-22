@@ -32,7 +32,7 @@ const searchModal = SearchModal({
   id: "search__dialog",
 });
 
-const logoURL = new URL("/assets/images/vanilla-logo.webp", import.meta.url);
+const logoURL = new URL("./assets/images/vanilla-logo.webp", import.meta.url);
 class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<header>
