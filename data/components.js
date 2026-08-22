@@ -1,8 +1,3 @@
-let host = new URL(document.location.origin);
-
-if (document.location.href.includes("github")) {
-  host = new URL(document.location.origin + "vanilla-components/");
-}
 export const components = [
   { page: "Home", url: `${host}` },
   { page: "Button", url: `${host}components/Button/` },

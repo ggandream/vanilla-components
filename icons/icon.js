@@ -1,5 +1,5 @@
 async function loadIcon(name) {
-  const response = await fetch(`../../icons/${name}.svg`);
+  const response = await fetch(new URL(`./${name}.svg`, import.meta.url));
   return response.text();
 }
 
