@@ -31,13 +31,15 @@ const searchModal = SearchModal({
   variant: "search__components",
   id: "search__dialog",
 });
+
+const logoURL = new URL("/assets/images/vanilla-logo.webp", import.meta.url);
 class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<header>
                         <nav class="nav">
                         <img
                             class="nav__logo"
-                            src="../../assets/images/vanilla-logo.webp"
+                            src="${logoURL}"
                             alt=""
                         />
                         <div class="nav__btns">
