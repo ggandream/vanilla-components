@@ -76,6 +76,10 @@ const searchInputs = document.querySelectorAll(".search__input");
 const componentsLinks = document.querySelectorAll(
   ".list__link--search__components",
 );
+
+// const url = new URL(document.location.href);
+// console.log(document.location.host);
+
 // THEME OR MODE FEATURE
 lightModeBtn.addEventListener("click", () => {
   html.setAttribute("data-theme", "0");
