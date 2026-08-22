@@ -4,10 +4,19 @@ import { SearchButton } from "./components/SearchButton/SearchButton.js";
 import { SearchModal } from "./components/SearchModal/SearchModal.js";
 import { components } from "./data/components.js";
 
+let localMode = localStorage.getItem("theme")
+  ? localStorage.getItem("theme")
+  : "0";
+
+let logoURL = new URL(
+  `./assets/images/vanilla-logo-${localMode}.webp`,
+  import.meta.url,
+);
+
 const navList = NavList({ items: components, variant: "menu__list" });
 
 const lightMode = ActionIcon({
-  variant: "light hidden",
+  variant: "light",
   icon: "sun",
   attributes: { "data-id": "light-mode" },
 });
@@ -32,7 +41,6 @@ const searchModal = SearchModal({
   id: "search__dialog",
 });
 
-const logoURL = new URL("./assets/images/vanilla-logo.webp", import.meta.url);
 class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<header>
@@ -78,8 +86,8 @@ const searchInputs = document.querySelectorAll(".search__input");
 const componentsLinks = document.querySelectorAll(
   ".list__link--search__components",
 );
-
 const sidebarLinks = document.querySelectorAll(".list__link--menu__list");
+const logo = document.querySelector(".nav__logo");
 
 // ACTIVE PAGE ON SIDEBAR
 const currentPage = document.location.pathname.split("/");
@@ -101,6 +109,8 @@ lightModeBtn.addEventListener("click", () => {
   lightModeBtn.classList.add("hidden");
   darkModeBtn.classList.remove("hidden");
   localStorage.setItem("theme", "0");
+  logoURL = new URL(`./assets/images/vanilla-logo-0.webp`, import.meta.url);
+  logo.setAttribute("src", logoURL);
 });
 
 darkModeBtn.addEventListener("click", () => {
@@ -108,12 +118,16 @@ darkModeBtn.addEventListener("click", () => {
   lightModeBtn.classList.remove("hidden");
   darkModeBtn.classList.add("hidden");
   localStorage.setItem("theme", "dark");
+  logoURL = new URL(`./assets/images/vanilla-logo-dark.webp`, import.meta.url);
+  logo.setAttribute("src", logoURL);
 });
 
-const localMode = localStorage.getItem("theme");
-
 if (localMode) html.setAttribute("data-theme", localMode);
-
+if (localMode === "0") {
+  lightModeBtn.classList.add("hidden");
+} else {
+  darkModeBtn.classList.add("hidden");
+}
 // SEARCH FEATURE
 
 searchInputs.forEach((searchInput) => {
