@@ -79,8 +79,21 @@ const componentsLinks = document.querySelectorAll(
   ".list__link--search__components",
 );
 
-// const url = new URL(document.location.href);
-// console.log(document.location.host);
+const sidebarLinks = document.querySelectorAll(".list__link--menu__list");
+
+// ACTIVE PAGE ON SIDEBAR
+const currentPage = document.location.pathname.split("/");
+
+sidebarLinks.forEach((sidebarLink) => {
+  if (sidebarLink.textContent === currentPage[2]) {
+    sidebarLink.classList.add("link--active");
+  } else if (
+    sidebarLink.textContent === "Home" &&
+    currentPage[2] === undefined
+  ) {
+    sidebarLink.classList.add("link--active");
+  }
+});
 
 // THEME OR MODE FEATURE
 lightModeBtn.addEventListener("click", () => {
