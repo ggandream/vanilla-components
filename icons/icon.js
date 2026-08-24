@@ -10,4 +10,5 @@ export const icons = {
   sun: await loadIcon("sun"),
   moon: await loadIcon("moon"),
   search: await loadIcon("search"),
+  chevron: await loadIcon("chevron"),
 };

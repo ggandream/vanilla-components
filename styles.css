@@ -79,6 +79,8 @@ body {
   justify-content: center;
   font-family: "ElmsSans";
   background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
 }
 main {
   width: 100%;
@@ -106,11 +108,19 @@ main {
 .content {
   width: 80%;
   padding: 0 50px;
+  @media (width: 375px) {
+    padding: 0 16px;
+  }
 }
 
 .card {
   width: 100%;
   padding: 32px 0 48px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 32px;
 }
 
 .header {
@@ -153,13 +163,6 @@ header {
   font-family: "ElmSans", system-ui;
   font-size: 18px;
   font-weight: 400;
-  color: var(--font-color);
-}
-
-/* title */
-
-.title {
-  margin: 0;
   color: var(--font-color);
 }
 

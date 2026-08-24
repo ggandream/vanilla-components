@@ -4,4 +4,5 @@ export const components = [
   { page: "Button", url: ` ${root}components/Button/` },
   { page: "ActionIcon", url: ` ${root}components/ActionIcon/` },
   { page: "SearchButton", url: ` ${root}components/SearchButton/` },
+  { page: "Accordion", url: ` ${root}components/Accordion/` },
 ];
