@@ -5,4 +5,5 @@ export const components = [
   { page: "ActionIcon", url: ` ${root}components/ActionIcon/` },
   { page: "SearchButton", url: ` ${root}components/SearchButton/` },
   { page: "Accordion", url: ` ${root}components/Accordion/` },
+  { page: "NavList", url: ` ${root}components/NavList/` },
 ];

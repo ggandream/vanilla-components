@@ -10,6 +10,19 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 0;
+
+    width: 38px;
+    margin: 1px;
+
+    background: transparent;
+
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
 }
 
 .search__btn > div {
@@ -25,6 +38,9 @@
 
 .search__text {
   color: var(--color-vanilla-300);
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .search__tag {
@@ -35,4 +51,7 @@
   font-weight: 600;
   background-color: var(--background-color-2);
   border-radius: 4px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
