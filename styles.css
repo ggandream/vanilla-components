@@ -189,17 +189,12 @@ header {
   }
 }
 
-.hidden {
-  display: none;
-}
-
 .mobile__menu-container {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 5;
   background-color: var(--background-color);
-  display: none;
 }
 
 .mobile__menu-list {
@@ -257,14 +252,18 @@ header {
   transform-origin: left;
 }
 
-.mobile__menu-btn:hover div:first-child {
+.mobile__menu-btn--close div:first-child {
   transform: rotate(45deg);
 }
 
-.mobile__menu-btn:hover div:nth-child(2) {
+.mobile__menu-btn--close div:nth-child(2) {
   opacity: 0;
 }
 
-.mobile__menu-btn:hover div:last-child {
+.mobile__menu-btn--close div:last-child {
   transform: rotate(-45deg);
+}
+
+.hidden {
+  display: none;
 }

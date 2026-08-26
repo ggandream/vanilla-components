@@ -47,7 +47,12 @@ class SiteHeader extends HTMLElement {
                         <nav class="nav">
                         <div class="nav__btns nav__btns--right">
                         
-                        <button type="button" class="mobile__menu-btn">
+                        <button type="button" class="mobile__menu-btn"
+                        aria-label="open main menu"
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
+                        
+                        >
                           <div></div>
                           <div></div>
                           <div></div>
@@ -96,6 +101,8 @@ const componentsLinks = document.querySelectorAll(
 );
 const sidebarLinks = document.querySelectorAll(".list__link--menu__list");
 const logo = document.querySelector(".nav__logo");
+const mobileMenuBtn = document.querySelector(".mobile__menu-btn");
+const mobileMenu = document.querySelector("#mobile__menu");
 
 // ACTIVE PAGE ON SIDEBAR
 const currentPage = document.location.pathname.split("/");
@@ -136,11 +143,10 @@ if (localMode === "0") {
 } else {
   darkModeBtn.classList.add("hidden");
 }
-// SEARCH FEATURE
 
+// SEARCH FEATURE
 searchInputs.forEach((searchInput) => {
   searchInput.addEventListener("input", (e) => {
-    console.log(e.target.value);
     componentsLinks.forEach((link) =>
       link.parentElement.classList.remove("hidden"),
     );
@@ -153,4 +159,16 @@ searchInputs.forEach((searchInput) => {
       )
       .map((link) => link.parentElement.classList.add("hidden"));
   });
+});
+
+// MOBILE MENU
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+  mobileMenuBtn.classList.toggle("mobile__menu-btn--close");
+
+  const isExpanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
+  mobileMenuBtn.setAttribute("aria-expanded", !isExpanded);
+
+  const isHidden = mobileMenu.getAttribute("aria-hidden");
+  mobileMenu.setAttribute("aria-hidden", !isHidden);
 });
