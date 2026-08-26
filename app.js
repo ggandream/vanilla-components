@@ -45,11 +45,19 @@ class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<header>
                         <nav class="nav">
+                        <div class="nav__btns nav__btns--right">
+                        
+                        <button type="button" class="mobile__menu-btn">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </button>
                         <img
                             class="nav__logo"
                             src="${logoURL}"
                             alt=""
                         />
+                        </div>
                         <div class="nav__btns">
                         ${searchBtn}
                         ${darkMode} ${lightMode}
