@@ -15,6 +15,8 @@ let logoURL = new URL(
 
 const navList = NavList({ items: components, variant: "menu__list" });
 
+const mobileNavList = NavList({ items: components, variant: "mobile" });
+
 const lightMode = ActionIcon({
   variant: "light",
   icon: "sun",
@@ -96,7 +98,7 @@ class SiteMobileMenu extends HTMLElement {
                         aria-hidden="true"
                       >
                         <nav class="mobile__nav">
-                        ${navList}
+                        ${mobileNavList}
                         </nav>
                       </div>`;
   }

@@ -197,28 +197,6 @@ header {
   background-color: var(--background-color);
 }
 
-.mobile__menu-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 18px 0;
-  padding: 0 16px;
-}
-
-.mobile__menu-list li {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.list__link--mobile {
-  width: 100%;
-  text-align: center;
-}
-
 /* Hamburguer button */
 .mobile__menu-btn {
   border: 1px solid transparent;

@@ -8,6 +8,10 @@
   margin: 0;
   top: 10%;
   margin-inline: auto;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 }
 
 .search__dialog::backdrop {
