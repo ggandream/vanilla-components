@@ -1,0 +1,16 @@
+.code-block {
+  background-color: var(--color-cocoa-200);
+  color: var(--color-vanilla-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  border-radius: 12px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.code-block > pre {
+  margin: 0;
+}
