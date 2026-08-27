@@ -38,7 +38,7 @@
   --color-gold-300: #e86009;
   --color-gold-400: #b93905;
   --color-cork: #d59756;
-  --color-cocoa-100: #5d4034;
+  --color-cocoa-100: #834333; /* #5d4034;*/
   --color-cocoa-200: #3d251b;
 
   /* Mode colors */
@@ -59,11 +59,11 @@
   --color-gold-300: #e86009;
   --color-gold-400: #b93905;
   --color-cork: #d59756;
-  --color-cocoa-100: #5d4034;
+  --color-cocoa-100: #834333; /* #5d4034;*/
   --color-cocoa-200: #3d251b;
 
   /* Mode colors */
-  --background-color: #575241;
+  --background-color: #4c4941;
   --background-color-2: #5d4034;
   --font-color: #fefefc;
   --hover-color: #e86009;

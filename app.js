@@ -27,6 +27,12 @@ const darkMode = ActionIcon({
   attributes: { "data-id": "dark-mode" },
 });
 
+const gitHub = ActionIcon({
+  variant: "primary",
+  icon: "github",
+  href: "https://github.com/ggandream/vanilla-components",
+});
+
 const searchBtn = SearchButton({
   shortcut: "Ctrl + k",
   icon: "search",
@@ -65,7 +71,7 @@ class SiteHeader extends HTMLElement {
                         </div>
                         <div class="nav__btns">
                         ${searchBtn}
-                        ${darkMode} ${lightMode}
+                         ${darkMode} ${lightMode} ${gitHub}
                         </div>
 
                         </nav>
@@ -82,6 +88,20 @@ class SiteSidebar extends HTMLElement {
   }
 }
 
+class SiteMobileMenu extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `<div
+                        class="mobile__menu-container hidden"
+                        id="mobile__menu"
+                        aria-hidden="true"
+                      >
+                        <nav class="mobile__nav">
+                        ${navList}
+                        </nav>
+                      </div>`;
+  }
+}
+
 class SiteSearch extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `${searchModal}`;
@@ -91,6 +111,7 @@ class SiteSearch extends HTMLElement {
 customElements.define("site-header", SiteHeader);
 customElements.define("site-sidebar", SiteSidebar);
 customElements.define("site-search", SiteSearch);
+customElements.define("site-mobile-menu", SiteMobileMenu);
 
 const html = document.querySelector("html");
 const lightModeBtn = document.querySelector("[data-id='light-mode']");
