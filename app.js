@@ -33,6 +33,11 @@ const gitHub = ActionIcon({
   variant: "primary",
   icon: "github",
   href: "https://github.com/ggandream/vanilla-components",
+  attributes: {
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": "Github",
+  },
 });
 
 const searchBtn = SearchButton({
