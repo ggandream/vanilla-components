@@ -12,5 +12,6 @@ export const icons = {
   search: await loadIcon("search"),
   chevron: await loadIcon("chevron"),
   copy: await loadIcon("copy"),
+  check: await loadIcon("check"),
   js: await loadIcon("js"),
 };

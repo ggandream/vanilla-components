@@ -16,20 +16,25 @@ if (card) {
 }
 
 const copyBtns = document.querySelectorAll("[data-copy]");
+const copiedBtn = document.querySelector("[data-copied]");
 
-copyBtns.forEach((copyBtn) => {
+copyBtns.forEach((copyBtn, i) => {
   copyBtn.addEventListener("click", (e) => {
     const elementClass = copyBtn.getAttribute("data-copy");
     const codeCopied = document.querySelector(`.${elementClass}`);
-    writeClipboardText(codeCopied.lastElementChild.textContent.trim());
+    writeClipboardText(codeCopied.lastElementChild.textContent.trim(), i);
+    copyBtn.classList.add("hidden");
   });
 });
 
-async function writeClipboardText(text) {
+async function writeClipboardText(text, btnIndex) {
   try {
     await navigator.clipboard.writeText(text);
+    copiedBtn.classList.remove("hidden");
   } catch (error) {
     console.error(error.message);
   } finally {
+    copyBtns[btnIndex].classList.remove("hidden");
+    copiedBtn.classList.add("hidden");
   }
 }
