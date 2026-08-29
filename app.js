@@ -4,9 +4,12 @@ import { SearchButton } from "./components/SearchButton/SearchButton.js";
 import { SearchModal } from "./components/SearchModal/SearchModal.js";
 import { components } from "./data/components.js";
 
+const LIGHT_MODE = "0";
+const DARK_MODE = "dark";
+
 let localMode = localStorage.getItem("theme")
   ? localStorage.getItem("theme")
-  : "0";
+  : LIGHT_MODE;
 
 let logoURL = new URL(
   `./assets/images/vanilla-logo-${localMode}.webp`,
@@ -148,25 +151,25 @@ sidebarLinks.forEach((sidebarLink) => {
 
 // THEME OR MODE FEATURE
 lightModeBtn.addEventListener("click", () => {
-  html.setAttribute("data-theme", "0");
+  html.setAttribute("data-theme", LIGHT_MODE);
   lightModeBtn.classList.add("hidden");
   darkModeBtn.classList.remove("hidden");
-  localStorage.setItem("theme", "0");
+  localStorage.setItem("theme", LIGHT_MODE);
   logoURL = new URL(`./assets/images/vanilla-logo-0.webp`, import.meta.url);
   logo.setAttribute("src", logoURL);
 });
 
 darkModeBtn.addEventListener("click", () => {
-  html.setAttribute("data-theme", "dark");
+  html.setAttribute("data-theme", DARK_MODE);
   lightModeBtn.classList.remove("hidden");
   darkModeBtn.classList.add("hidden");
-  localStorage.setItem("theme", "dark");
+  localStorage.setItem("theme", DARK_MODE);
   logoURL = new URL(`./assets/images/vanilla-logo-dark.webp`, import.meta.url);
   logo.setAttribute("src", logoURL);
 });
 
 if (localMode) html.setAttribute("data-theme", localMode);
-if (localMode === "0") {
+if (localMode === LIGHT_MODE) {
   lightModeBtn.classList.add("hidden");
 } else {
   darkModeBtn.classList.add("hidden");

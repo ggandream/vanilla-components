@@ -5,7 +5,9 @@ const card = document.querySelector(".card");
 
 if (card) {
   const component = CodeBlock({
-    code: `function sayHello() { console.log("Hello, World!"); }`,
+    code: `function sayHello() { 
+    console.log("Hello, World!"); 
+    }`,
     language: "js",
     variant: "code-block",
   });
