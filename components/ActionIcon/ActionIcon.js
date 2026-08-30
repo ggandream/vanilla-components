@@ -20,7 +20,14 @@ export const ActionIcon = ({
             </button>`;
 };
 
-export const setIconActionIcon = (component, icon) => {
+export const setIconActionIcon = (
+  component,
+  icon,
+  addVariant,
+  removeVariant,
+) => {
+  component.classList.add(`action-icon--${addVariant}`);
+  component.classList.remove(`action-icon--${removeVariant}`);
   const iconContainer = component.querySelector(".action-icon__icon");
   iconContainer.innerHTML = `${icons[icon]}`;
   component.dataset.icon = icon;

@@ -23,16 +23,10 @@ const navList = NavList({ items: components, variant: "menu__list" });
 
 const mobileNavList = NavList({ items: components, variant: "mobile" });
 
-const lightMode = ActionIcon({
+const themeMode = ActionIcon({
   variant: "light",
   icon: "sun",
-  attributes: { "data-id": "light-mode" },
-});
-
-const darkMode = ActionIcon({
-  variant: "dark",
-  icon: "moon",
-  attributes: { "data-id": "dark-mode" },
+  attributes: { "data-id": "theme-mode-btn" },
 });
 
 const gitHub = ActionIcon({
@@ -84,7 +78,7 @@ class SiteHeader extends HTMLElement {
                         </div>
                         <div class="nav__btns">
                         ${searchBtn}
-                         ${darkMode} ${lightMode} ${gitHub}
+                        ${themeMode} ${gitHub}
                         </div>
 
                         </nav>
@@ -127,8 +121,7 @@ customElements.define("site-search", SiteSearch);
 customElements.define("site-mobile-menu", SiteMobileMenu);
 
 const html = document.querySelector("html");
-const lightModeBtn = document.querySelector("[data-id='light-mode']");
-const darkModeBtn = document.querySelector("[data-id='dark-mode']");
+const themeModeBtn = document.querySelector("[data-id='theme-mode-btn']");
 const searchInputs = document.querySelectorAll(".search__input");
 const componentsLinks = document.querySelectorAll(
   ".list__link--search__components",
@@ -153,29 +146,38 @@ sidebarLinks.forEach((sidebarLink) => {
 });
 
 // THEME OR MODE FEATURE
-lightModeBtn.addEventListener("click", () => {
-  html.setAttribute("data-theme", LIGHT_MODE);
-  lightModeBtn.classList.add("hidden");
-  darkModeBtn.classList.remove("hidden");
-  localStorage.setItem("theme", LIGHT_MODE);
-  logoURL = new URL(`./assets/images/vanilla-logo-0.webp`, import.meta.url);
-  logo.setAttribute("src", logoURL);
-});
+themeModeBtn.addEventListener("click", (e) => {
+  console.log(themeModeBtn);
+  setIconActionIcon(
+    themeModeBtn,
+    themeModeBtn.dataset.icon === "moon" ? "sun" : "moon",
+    themeModeBtn.dataset.icon === "moon" ? "light" : "dark",
+    themeModeBtn.dataset.icon === "moon" ? "dark" : "light",
+  );
+  localStorage.setItem(
+    "theme",
+    localStorage.getItem("theme") === LIGHT_MODE ? DARK_MODE : LIGHT_MODE,
+  );
+  html.setAttribute(
+    "data-theme",
+    html.getAttribute("data-theme") === LIGHT_MODE ? DARK_MODE : LIGHT_MODE,
+  );
+  logoURL =
+    localStorage.getItem("theme") === LIGHT_MODE
+      ? new URL(`./assets/images/vanilla-logo-0.webp`, import.meta.url)
+      : new URL(`./assets/images/vanilla-logo-dark.webp`, import.meta.url);
 
-darkModeBtn.addEventListener("click", () => {
-  html.setAttribute("data-theme", DARK_MODE);
-  lightModeBtn.classList.remove("hidden");
-  darkModeBtn.classList.add("hidden");
-  localStorage.setItem("theme", DARK_MODE);
-  logoURL = new URL(`./assets/images/vanilla-logo-dark.webp`, import.meta.url);
   logo.setAttribute("src", logoURL);
 });
 
 if (localMode) html.setAttribute("data-theme", localMode);
 if (localMode === LIGHT_MODE) {
-  lightModeBtn.classList.add("hidden");
-} else {
-  darkModeBtn.classList.add("hidden");
+  setIconActionIcon(
+    themeModeBtn,
+    themeModeBtn.dataset.icon === "moon" ? "sun" : "moon",
+    themeModeBtn.dataset.icon === "moon" ? "light" : "dark",
+    themeModeBtn.dataset.icon === "moon" ? "dark" : "light",
+  );
 }
 
 // SEARCH FEATURE
