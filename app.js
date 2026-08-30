@@ -1,4 +1,7 @@
-import { ActionIcon } from "./components/ActionIcon/ActionIcon.js";
+import {
+  ActionIcon,
+  setIconActionIcon,
+} from "./components/ActionIcon/ActionIcon.js";
 import { NavList } from "./components/NavList/NavList.js";
 import { SearchButton } from "./components/SearchButton/SearchButton.js";
 import { SearchModal } from "./components/SearchModal/SearchModal.js";
