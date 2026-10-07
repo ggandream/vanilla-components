@@ -27,6 +27,7 @@
   flex-direction: column;
   border-radius: 8px;
   border: 1px solid #caccd1;
+  background-color: rgba(249, 243, 221, 0.2);
   /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: 3px 6px 6px -3px rgba(0, 0, 0, 0.1);
 }
@@ -40,6 +41,7 @@
   flex-direction: column;
   border-radius: 8px;
   border: 1px solid #caccd1;
+  background-color: rgba(249, 243, 221, 0.2);
   /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: 3px 6px 6px -3px rgba(0, 0, 0, 0.1);
 
@@ -84,26 +86,27 @@
 .toggle-card__title{
   font-size: 16px;
   margin: 0;
+  color: var(--font-color);
 }
 
 .toggle-card__tag{
   font-size: 10.5px;
   color: #fff;
   font-weight: 500;
-  background-color: #d74b81;
+  background-color: var(--color-gold-400);
   padding: 3px 8px;
   border-radius: 10px;
 }
 
 .toggle-card__text{
-  color: #888ea4;
+  color: var(--font-color);
   line-height: 18px;
   font-size: 14px;
 
 }
 
 .toggle-card__text--back{
-  color: #2c2c2c;
+  color: var(--font-color);
   text-align: center;
   line-height: 26px;
   font-size: 18px;
