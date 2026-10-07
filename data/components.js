@@ -6,4 +6,5 @@ export const components = [
   { page: "SearchButton", url: ` ${root}components/SearchButton/` },
   { page: "Accordion", url: ` ${root}components/Accordion/` },
   { page: "CodeBlock", url: ` ${root}components/CodeBlock/` },
+  { page: "ToggleCard", url: ` ${root}components/ToggleCard/` },
 ];
