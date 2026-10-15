@@ -5,12 +5,12 @@ import { ToggleCard } from "./ToggleCard.js";
 const card = document.querySelector(".card");
 
 if (card) {
-  const component = ToggleCard({ title: "Norway Fjord Adventures",
-    image: "../../assets/images/bg-8.webp", 
+  const component = ToggleCard({ title: "Trip to Antigua Guatemala",
+    image: "../../assets/images/antigua.webp", 
     altText: "Cartoon winter mountain landscape",
     isOnSale: true,
-    frontText: "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-    backText: "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+    frontText: "Guatemala, Central America",
+    backText: "Antigua Guatemala is a historic colonial city in the central highlands of Guatemala famous for its well-preserved Spanish Baroque architecture, cobblestone streets, and surrounding volcanoes.",
     btnLabel: "Book classic tour now"});
 
   const title = Title({ children: "Toggle Card" });

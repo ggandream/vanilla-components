@@ -18,9 +18,6 @@ export const ToggleCard = ({ title = "", image, altText, isOnSale = false, front
                         <p class="toggle-card__text">
                         ${frontText}
                         </p>
-                        <button type="button" class="toggle-card__button">
-                        ${btnLabel || 'Button'}
-                        </button>
                     </div>
                     </article>
                     <article class="toggle-card__back">
