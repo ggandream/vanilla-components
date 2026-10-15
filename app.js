@@ -211,7 +211,7 @@ mobileMenuBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("keydown", (e) => {
-  if (e.ctrlKey && e.key === "k") {
+  if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
     e.preventDefault();
     searchDialog.showModal();
   }

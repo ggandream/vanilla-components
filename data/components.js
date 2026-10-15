@@ -7,4 +7,5 @@ export const components = [
   { page: "Accordion", url: ` ${root}components/Accordion/` },
   { page: "CodeBlock", url: ` ${root}components/CodeBlock/` },
   { page: "ToggleCard", url: ` ${root}components/ToggleCard/` },
+  { page: "ToggleCardWithButton", url: ` ${root}components/ToggleCardWithButton/` },
 ];
