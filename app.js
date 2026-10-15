@@ -130,6 +130,7 @@ const sidebarLinks = document.querySelectorAll(".list__link--menu__list");
 const logo = document.querySelector(".nav__logo");
 const mobileMenuBtn = document.querySelector(".mobile__menu-btn");
 const mobileMenu = document.querySelector("#mobile__menu");
+const searchDialog = document.querySelector("#search__dialog")
 
 // ACTIVE PAGE ON SIDEBAR
 const currentPage = document.location.pathname.split("/");
@@ -208,3 +209,18 @@ mobileMenuBtn.addEventListener("click", () => {
   const isHidden = mobileMenu.getAttribute("aria-hidden");
   mobileMenu.setAttribute("aria-hidden", !isHidden);
 });
+
+
+window.addEventListener("keydown", (e) => {
+  e.preventDefault();
+  if(e.ctrlKey && e.key === "k"){
+    searchDialog.showModal();
+  }
+})
+
+searchDialog.addEventListener("keyup", (e) => {
+  if(e.key === "Escape"){
+    searchDialog.close();
+  }
+})
+
