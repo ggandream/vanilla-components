@@ -47,6 +47,11 @@
 .search__components {
   padding: 0 0 0 4px;
   margin: 0;
+  list-style: none;
+
+  li{
+    list-style: none;
+  }
 }
 
 .list_link {
