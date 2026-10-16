@@ -7,7 +7,7 @@ const card = document.querySelector(".card");
 if (card) {
   const component = ToggleCard({ title: "Trip to Antigua Guatemala",
     image: "../../assets/images/st-cathalina-arc.webp", 
-    altText: "Cartoon winter mountain landscape",
+    altText: "Cartoon of saint cathalina archway in Antigua Guatemala",
     isOnSale: true,
     frontText: "Guatemala, Central America",
     backText: "Antigua Guatemala is a historic colonial city in the central highlands of Guatemala famous for its well-preserved Spanish Baroque architecture, cobblestone streets, and surrounding volcanoes.",

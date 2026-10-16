@@ -7,12 +7,12 @@ if (card) {
   const component = ToggleCardWithButton({
     title: "La Merced Church",
     image: "../../assets/images/merced-church.webp",
-    altText: "Cartoon winter mountain landscape",
+    altText: "A striking yellow, earthquake-resistant Baroque church",
     tag: "Antigua Guatemala",
     frontText:
       "It is a striking yellow, earthquake-resistant Baroque landmark built between 1749 and 1767 by architect Juan de Dios Estrada.",
     backText:
-      `The church that you see today was inaugurated in 1767, commissioned by the Mercedarians and designed by architect Juan de Dios Estrada, using building techniques designed to withstand earthquakes. Low and concentrated thick walls at the base, small and high windows, buttresses to reinforce the structure, were the primary reasons that the church fared so well during the earthquake six years later in 1773.`,
+      `Inaugurated in 1767, commissioned by the Mercedarians and designed by architect Juan de Dios Estrada, using building techniques designed to withstand earthquakes. Low and concentrated thick walls at the base, small and high windows, were the primary reasons that the church fared so well during the earthquake in 1773.`,
     btnLabel: "More info...",
   });
 

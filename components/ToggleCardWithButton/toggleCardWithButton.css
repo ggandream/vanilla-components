@@ -103,11 +103,11 @@
 }
 
 .toggle-card__text--back {
-  margin: 10px 0;
+  margin: 10px 8px;
   color: var(--font-color);
-  text-align:left;
+  text-align: center;
   vertical-align: middle;
-  line-height: 24px;
+  line-height: 26px;
   font-size: 16px;
 }
 
