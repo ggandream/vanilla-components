@@ -6,7 +6,7 @@ const card = document.querySelector(".card");
 
 if (card) {
   const component = ToggleCard({ title: "Trip to Antigua Guatemala",
-    image: "../../assets/images/antigua.webp", 
+    image: "../../assets/images/st-cathalina-arc.webp", 
     altText: "Cartoon winter mountain landscape",
     isOnSale: true,
     frontText: "Guatemala, Central America",
