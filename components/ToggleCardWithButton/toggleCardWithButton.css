@@ -12,10 +12,8 @@
   transition: all 0.5s ease-out;
 }
 
-.toggle-card__flip-container:hover {
-  .toggle-card {
-    transform: rotateY(180deg);
-  }
+.flip {
+  transform: rotateY(180deg);
 }
 
 .toggle-card__front {
@@ -73,7 +71,7 @@
 
 .toggle-card__content--back {
   padding: 22px 26px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -105,10 +103,12 @@
 }
 
 .toggle-card__text--back {
+  margin: 10px 0;
   color: var(--font-color);
-  text-align: center;
-  line-height: 26px;
-  font-size: 18px;
+  text-align:left;
+  vertical-align: middle;
+  line-height: 24px;
+  font-size: 16px;
 }
 
 .toggle-card__button {
