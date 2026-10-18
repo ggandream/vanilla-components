@@ -8,7 +8,7 @@
   margin: 1px;
   font-family: "ElmsSans";
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   background: transparent;
 
   display: inline-flex;
@@ -16,8 +16,14 @@
   justify-content: center;
   align-items: center;
 
-  gap: 2px;
+  gap: 12px;
   cursor: pointer;
+}
+
+.btn__icon, .btn__text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn--primary {
