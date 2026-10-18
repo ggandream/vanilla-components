@@ -45,6 +45,7 @@
   --background-color: #fdfbf4;
   --background-color-2: #dcd1b0;
   --font-color: #341f13;
+  --font-color-2: #3d251b;
   --hover-color: #f1e4b2;
   --focus-color: #f9ab51;
 }
@@ -66,6 +67,7 @@
   --background-color: #4c4941;
   --background-color-2: #5d4034;
   --font-color: #fefefc;
+  --font-color-2: #dcd1b0;
   --hover-color: #e86009;
   --focus-color: #b93905;
 }
