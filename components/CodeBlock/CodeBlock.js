@@ -16,7 +16,7 @@ const copiedBtn = ActionIcon({
 export const CodeBlock = ({ code = "", language = "js", variant = "" }) => {
   const charHTML = (str) =>
     str
-      .replace(/&/g, "$amp;")
+      .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")

@@ -17,17 +17,17 @@ if (card) {
   card.innerHTML = `${title} ${component}`;
 }
 
-const copyBtns = document.querySelectorAll("[data-copy]");
+const copyBtn = document.querySelector("[data-copy]");
 const copiedBtn = document.querySelector("[data-copied]");
 
-copyBtns.forEach((copyBtn, i) => {
+
   copyBtn.addEventListener("click", (e) => {
     const elementClass = copyBtn.getAttribute("data-copy");
     const codeCopied = document.querySelector(`.${elementClass}`);
-    writeClipboardText(codeCopied.lastElementChild.textContent.trim(), i);
+    writeClipboardText(codeCopied.lastElementChild.textContent.trim());
     copyBtn.classList.add("hidden");
   });
-});
+
 
 async function writeClipboardText(text, btnIndex) {
   try {
