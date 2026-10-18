@@ -33,10 +33,13 @@ async function writeClipboardText(text, btnIndex) {
   try {
     await navigator.clipboard.writeText(text);
     copiedBtn.classList.remove("hidden");
+
+    setTimeout(() => {
+      copiedBtn.classList.add("hidden");
+      copyBtns[btnIndex].classList.remove("hidden");
+    }, 1500);
   } catch (error) {
     console.error(error.message);
-  } finally {
     copyBtns[btnIndex].classList.remove("hidden");
-    copiedBtn.classList.add("hidden");
   }
 }
