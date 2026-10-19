@@ -1,0 +1,45 @@
+.carousel {
+  position: relative;
+}
+
+.carousel__item {
+  height: 300px;
+  background: bisque;
+  padding: 1em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  display: none;
+}
+
+.carousel__item--selected {
+  display: block;
+}
+
+.carousel__nav {
+  width: 100%;
+  padding: 20px 0;
+  bottom: 0;
+  left: 0;
+  background: chocolate;
+
+  text-align: center;
+}
+
+.carousel__button {
+  width: 26px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+
+  display: inline-block;
+  margin: 0 1px;
+  cursor: pointer;
+}
+
+.carousel__button--selected {
+  background: rgba(255, 255, 255, 1);
+}
