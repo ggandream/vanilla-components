@@ -12,6 +12,11 @@
   font-weight: 400;
   min-height: 120px;
   padding: 10px;
+
+  @media (min-width: 768px) and (orientation: portrait) {
+    width: 100%;
+    
+  }
 }
 
 .code-block > pre {
