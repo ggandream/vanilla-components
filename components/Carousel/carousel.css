@@ -3,6 +3,11 @@
   width: 70%;
 }
 
+.carousel__item-container{
+  margin: 0;
+  padding: 0;
+}
+
 .carousel__item{
   width: 100%;
   height: 400px;
@@ -33,8 +38,8 @@
 
 .carousel__nav{
   width: 100%;
-  height: 50%;
-  padding: 20px 1em;
+  height: 54%;
+  padding: 0 18px 20px;
   background: transparent;
 
   position: absolute;
@@ -44,11 +49,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  pointer-events: none; 
 }
 
 .carousel__button-container{
   width: 100%;
   text-align: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel__button{
@@ -56,10 +69,21 @@
   height: 6px;
   background: rgba(255, 255, 255,0.6);
   border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 0;
 
   display: inline-block;
   margin: 0 2px;
   cursor: pointer;
+
+  position: relative;
+  pointer-events: auto;
+}
+
+.carousel__button::after {
+  content: "";
+  position: absolute;
+  inset: -10px -2px; /* área real: ~26x26 */
 }
 
 .carousel__button--selected{
@@ -74,11 +98,22 @@
 }
 .carousel__next{
   border: 1px solid transparent;
+  background: rgba(255, 255, 255,0.8);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.carousel__button:focus-visible,
+.carousel__next:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #000; /* doble anillo: se ve sobre fondo claro y oscuro */
 }
