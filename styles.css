@@ -218,7 +218,7 @@ header {
   cursor: pointer;
   gap: 8px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: none;
   }
 }

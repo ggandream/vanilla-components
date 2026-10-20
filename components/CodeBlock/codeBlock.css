@@ -12,10 +12,10 @@
   font-weight: 400;
   min-height: 120px;
   padding: 10px;
+  overflow-x: scroll;
 
-  @media (min-width: 768px) and (orientation: portrait) {
+  @media (max-width: 768px) {
     width: 100%;
-    
   }
 }
 
