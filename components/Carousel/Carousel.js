@@ -1,17 +1,22 @@
-export const Carousel = ({}) => {
-  return `<div class="carousel">
-  <div class="carousel__item carousel__item--selected">1</div>
-  <div class="carousel__item">2</div>
-  <div class="carousel__item">3</div>
-  <div class="carousel__item">4</div>
-  <div class="carousel__item">5</div>
+import { icons } from "../../icons/icon.js";
 
-  <div class="carousel__nav">
-    <div class="carousel__button carousel__button--selected"></div>
-    <div class="carousel__button"></div>
-    <div class="carousel__button"></div>
-    <div class="carousel__button"></div>
-    <div class="carousel__button"></div>
-  </div>
-</div>`;
+export const Carousel = ({ items = [1,2,3,4,5] , content= "text"}) => {
+
+  const itemsHTML = items.map((item) => {
+    return `<div class="carousel__item">${`<p>${item}</p>`}</div>`
+  })
+
+  return `<div class="carousel">
+            ${itemsHTML.join("")}
+            <div class="carousel__nav">
+              <div class="carousel__next-container">
+                <button class="carousel__next carousel__next--left">
+                ${icons["chevron_left"]}
+                </button>
+                <button class="carousel__next carousel__next--right">
+                ${icons["chevron_right"]}
+                </button>
+              </div>
+            </div>
+          </div>`;
 };

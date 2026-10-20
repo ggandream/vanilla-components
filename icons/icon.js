@@ -11,6 +11,8 @@ export const icons = {
   moon: await loadIcon("moon"),
   search: await loadIcon("search"),
   chevron: await loadIcon("chevron"),
+  chevron_left: await loadIcon("chevron_left"),
+  chevron_right: await loadIcon("chevron_right"),
   copy: await loadIcon("copy"),
   check: await loadIcon("check"),
   js: await loadIcon("js"),

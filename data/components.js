@@ -8,4 +8,5 @@ export const components = [
   { page: "CodeBlock", url: ` ${root}components/CodeBlock/` },
   { page: "ToggleCard", url: ` ${root}components/ToggleCard/` },
   { page: "ToggleCardWithButton", url: ` ${root}components/ToggleCardWithButton/` },
+  { page: "Carousel", url: ` ${root}components/Carousel/` },
 ];
