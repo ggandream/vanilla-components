@@ -20,9 +20,9 @@ export const Carousel = ({
   });
 
   return `<section class="carousel" aria-roledescription="carousel" aria-label="${label}">
-            <ul class="carousel__item-container">
+            <div class="carousel__item-container">
             ${itemsHTML.join("")}
-            </ul>
+            </div>
             <div class="carousel__nav">
               <div class="carousel__next-container">
                 <button class="carousel__next carousel__next--left"
