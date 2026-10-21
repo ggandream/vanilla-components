@@ -148,7 +148,6 @@ sidebarLinks.forEach((sidebarLink) => {
 
 // THEME OR MODE FEATURE
 themeModeBtn.addEventListener("click", (e) => {
-  console.log(themeModeBtn);
   setIconActionIcon(
     themeModeBtn,
     themeModeBtn.dataset.icon === "moon" ? "sun" : "moon",
@@ -172,6 +171,7 @@ themeModeBtn.addEventListener("click", (e) => {
 });
 
 if (localMode) html.setAttribute("data-theme", localMode);
+
 if (localMode === LIGHT_MODE) {
   setIconActionIcon(
     themeModeBtn,
