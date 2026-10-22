@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Components</title>
-    <script>document.documentElement.dataset.theme = localStorage.getItem("theme") || "0";</script>
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem("theme") || "0";
+    </script>
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="../Button/button.css" />
     <link rel="stylesheet" href="../ActionIcon/actionIcon.css" />
@@ -13,6 +16,19 @@
     <link rel="stylesheet" href="../NavList/navList.css" />
     <link rel="stylesheet" href="../SearchModal/searchModal.css" />
     <link rel="stylesheet" href="./codeBlock.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/languages/go.min.js"></script>
+
+    <script>
+      hljs.highlightAll();
+    </script>
 
     <script src="../../app.js" type="module"></script>
     <script src="index.js" type="module"></script>

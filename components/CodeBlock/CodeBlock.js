@@ -27,7 +27,7 @@ export const CodeBlock = ({ code = "", language = "js", variant = "" }) => {
               <span class="code-block__tag">${icons[language]}Demo.${language}</span>
                ${copyBtn}${copiedBtn}
             </div>
-            <pre><code>${charHTML(code)}</code></pre>
+            <pre><code class="language-js">${charHTML(code)}</code></pre>
           </div>
 `;
 };
