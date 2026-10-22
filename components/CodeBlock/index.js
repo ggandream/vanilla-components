@@ -20,7 +20,7 @@ if (card) {
 }
 
 const copyBtn = document.querySelector("[data-copy]");
-const foldBtn = document.querySelector("[data-id='fold']");
+
 const codeBlock = document.querySelector(".code-block");
 
 copyBtn.addEventListener("click", () => {
@@ -30,15 +30,18 @@ copyBtn.addEventListener("click", () => {
   copyBtn.classList.add("hidden");
 });
 
+const foldBtn = document.querySelector("[data-id='fold']");
+
 if(foldBtn){
   foldBtn.addEventListener("click", () => {
     
     if(foldBtn.dataset.icon === "fold-down"){
       setIcon_ActionIcon(foldBtn,"fold-up");
-      codeBlock.classList.add("collapse");
+      codeBlock.classList.remove("collapse");
     } else {
       setIcon_ActionIcon(foldBtn,"fold-down");
-      codeBlock.classList.remove("collapse");
+      codeBlock.classList.add("collapse");
     }
   })
 }
+

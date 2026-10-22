@@ -29,7 +29,7 @@ export const CodeBlock = ({ code = "", language = "js", variant = "" }) => {
       .replace(/"/g, "&quot;")
       .trim();
 
-  return `<div class="code-block ${variant}">
+  return `<div class="code-block ${variant} collapse">
             <div class="code-block__header">
               <span class="code-block__tag">${icons[language]}Demo.${language}</span>
               <div class="btn-container">
