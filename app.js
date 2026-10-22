@@ -1,6 +1,6 @@
 import {
   ActionIcon,
-  setIconActionIcon,
+  setIconAndVariant_ActionIcon,
 } from "./components/ActionIcon/ActionIcon.js";
 import { NavList } from "./components/NavList/NavList.js";
 import { SearchButton } from "./components/SearchButton/SearchButton.js";
@@ -148,7 +148,7 @@ sidebarLinks.forEach((sidebarLink) => {
 
 // THEME OR MODE FEATURE
 themeModeBtn.addEventListener("click", (e) => {
-  setIconActionIcon(
+  setIconAndVariant_ActionIcon(
     themeModeBtn,
     themeModeBtn.dataset.icon === "moon" ? "sun" : "moon",
     themeModeBtn.dataset.icon === "moon" ? "light" : "dark",
@@ -173,7 +173,7 @@ themeModeBtn.addEventListener("click", (e) => {
 if (localMode) html.setAttribute("data-theme", localMode);
 
 if (localMode === LIGHT_MODE) {
-  setIconActionIcon(
+  setIconAndVariant_ActionIcon(
     themeModeBtn,
     themeModeBtn.dataset.icon === "moon" ? "sun" : "moon",
     themeModeBtn.dataset.icon === "moon" ? "light" : "dark",

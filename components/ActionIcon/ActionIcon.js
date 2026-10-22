@@ -1,3 +1,4 @@
+import { components } from "../../data/components.js";
 import { icons } from "../../icons/icon.js";
 export const ActionIcon = ({
   variant = "primary",
@@ -20,7 +21,7 @@ export const ActionIcon = ({
             </button>`;
 };
 
-export const setIconActionIcon = (
+export const setIconAndVariant_ActionIcon = (
   component,
   icon,
   addVariant,
@@ -32,3 +33,12 @@ export const setIconActionIcon = (
   iconContainer.innerHTML = `${icons[icon]}`;
   component.dataset.icon = icon;
 };
+
+export const setIcon_ActionIcon = (
+  component,
+  icon
+) => {
+  const iconContainer = component.querySelector(".action-icon__icon");
+  iconContainer.innerHTML = `${icons[icon]}`;
+  component.dataset.icon = icon;
+}
