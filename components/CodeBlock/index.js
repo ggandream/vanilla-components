@@ -1,5 +1,7 @@
+import { setIcon_ActionIcon } from "../ActionIcon/ActionIcon.js";
 import { Title } from "../Title/Title.js";
 import { CodeBlock } from "./CodeBlock.js";
+import { writeClipboardText } from "./writeClipboardText.js";
 
 const card = document.querySelector(".card");
 
@@ -18,7 +20,8 @@ if (card) {
 }
 
 const copyBtn = document.querySelector("[data-copy]");
-const copiedBtn = document.querySelector("[data-copied]");
+const foldBtn = document.querySelector("[data-id='fold']");
+const codeBlock = document.querySelector(".code-block");
 
 copyBtn.addEventListener("click", () => {
   const elementClass = copyBtn.getAttribute("data-copy");
@@ -26,3 +29,16 @@ copyBtn.addEventListener("click", () => {
   writeClipboardText(codeCopied.lastElementChild.textContent.trim());
   copyBtn.classList.add("hidden");
 });
+
+if(foldBtn){
+  foldBtn.addEventListener("click", () => {
+    
+    if(foldBtn.dataset.icon === "fold-down"){
+      setIcon_ActionIcon(foldBtn,"fold-up");
+      codeBlock.classList.add("collapse");
+    } else {
+      setIcon_ActionIcon(foldBtn,"fold-down");
+      codeBlock.classList.remove("collapse");
+    }
+  })
+}

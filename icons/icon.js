@@ -5,7 +5,7 @@ async function loadIcon(name) {
 
 const iconArray = ["save","github", "search", "sun",
                 "moon", "chevron", "chevron_left",
-                "chevron_right", "copy", "check", "js"];
+                "chevron_right", "copy", "check", "js", "fold-down", "fold-up"];
 
 const svgs = await Promise.all(iconArray.map((icon) => loadIcon(icon)));
   
