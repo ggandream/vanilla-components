@@ -9,4 +9,5 @@ export const components = [
   { page: "ToggleCard", url: ` ${root}components/ToggleCard/` },
   { page: "ToggleCardWithButton", url: ` ${root}components/ToggleCardWithButton/` },
   { page: "Carousel", url: ` ${root}components/Carousel/` },
+  { page: "Tabs", url: ` ${root}components/Tabs/` },
 ];
