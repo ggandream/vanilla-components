@@ -39,11 +39,24 @@ if (card) {
 }
 
 const codeBlock = document.querySelector(".code-block--button");
-const foldBtn = document.querySelector("[data-id='fold']");
+const foldBtn = document.querySelector("[data-action='fold']");
+const foldDownBtn = document.querySelector(".btn__expand-code");
 
-if(foldBtn){
-  foldBtn.addEventListener("click", () => {
-    
+if (foldBtn) {
+    foldBtn.addEventListener("click", () => {
+      if (foldBtn.dataset.icon === "fold-down") {
+        setIcon_ActionIcon(foldBtn, "fold-up");
+        codeBlock.classList.remove("collapse");
+      } else {
+        setIcon_ActionIcon(foldBtn, "fold-down");
+        codeBlock.classList.add("collapse");
+         foldDownBtn.parentElement.classList.remove("hidden");
+      }
+    });
+}
+
+if(foldDownBtn){
+  foldDownBtn.addEventListener("click", () => {
     if(foldBtn.dataset.icon === "fold-down"){
       setIcon_ActionIcon(foldBtn,"fold-up");
       codeBlock.classList.remove("collapse");
@@ -51,5 +64,7 @@ if(foldBtn){
       setIcon_ActionIcon(foldBtn,"fold-down");
       codeBlock.classList.add("collapse");
     }
+    foldDownBtn.parentElement.classList.add("hidden");
   })
+  
 }

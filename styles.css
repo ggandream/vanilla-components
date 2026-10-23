@@ -252,10 +252,6 @@ header {
   transform: rotate(-45deg);
 }
 
-.hidden {
-  display: none;
-}
-
 /* SKELETON LOADER
    Custom elements are :not(:defined) until app.js registers them,
    and component pages start with an empty .card until index.js fills it. */
@@ -354,4 +350,8 @@ site-sidebar:not(:defined)::before {
       animation: none;
     }
   }
+}
+
+.hidden{
+  display: none;
 }
