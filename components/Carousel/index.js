@@ -1,4 +1,6 @@
+import { setIcon_ActionIcon } from "../ActionIcon/ActionIcon.js";
 import { CodeBlock } from "../CodeBlock/CodeBlock.js";
+import { writeClipboardText } from "../CodeBlock/writeClipboardText.js";
 import { Description } from "../Description/Description.js";
 import { Title } from "../Title/Title.js";
 import { Carousel } from "./Carousel.js";
@@ -16,9 +18,48 @@ if (card) {
   const code = CodeBlock({
     code: await (await fetch("./Carousel.js")).text(),
     language: "js",
-    variant: "button",
+    variant: "code-block--carousel",
   });
   card.innerHTML = `${title} ${description} ${component} ${code}`;
+}
+
+const copyBtn = document.querySelector("[data-copy]");
+
+copyBtn.addEventListener("click", () => {
+  const elementClass = copyBtn.getAttribute("data-copy");
+  const codeCopied = document.querySelector(`.${elementClass}`);
+  writeClipboardText(codeCopied.firstElementChild.nextElementSibling.textContent.trim());
+  copyBtn.classList.add("hidden");
+});
+
+const codeBlock = document.querySelector(".code-block--carousel");
+const foldBtn = document.querySelector("[data-action='fold']");
+const foldDownBtn = document.querySelector(".btn__expand-code");
+
+if (foldBtn) {
+  foldBtn.addEventListener("click", () => {
+    if (foldBtn.dataset.icon === "fold-down") {
+      setIcon_ActionIcon(foldBtn, "fold-up");
+      codeBlock.classList.remove("collapse");
+    } else {
+      setIcon_ActionIcon(foldBtn, "fold-down");
+      codeBlock.classList.add("collapse");
+      foldDownBtn.parentElement.classList.remove("hidden");
+    }
+  });
+}
+
+if (foldDownBtn) {
+  foldDownBtn.addEventListener("click", () => {
+    if (foldBtn.dataset.icon === "fold-down") {
+      setIcon_ActionIcon(foldBtn, "fold-up");
+      codeBlock.classList.remove("collapse");
+    } else {
+      setIcon_ActionIcon(foldBtn, "fold-down");
+      codeBlock.classList.add("collapse");
+    }
+    foldDownBtn.parentElement.classList.add("hidden");
+  });
 }
 
 document.querySelectorAll(".carousel").forEach((carousel) => {

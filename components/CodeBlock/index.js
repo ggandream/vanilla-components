@@ -26,18 +26,32 @@ const codeBlock = document.querySelector(".code-block");
 copyBtn.addEventListener("click", () => {
   const elementClass = copyBtn.getAttribute("data-copy");
   const codeCopied = document.querySelector(`.${elementClass}`);
-  writeClipboardText(codeCopied.lastElementChild.textContent.trim());
+  writeClipboardText(codeCopied.firstElementChild.nextElementSibling.textContent.trim());
   copyBtn.classList.add("hidden");
 });
 
-const foldBtn = document.querySelector("[data-id='fold']");
+const foldBtn = document.querySelector("[data-action='fold']");
+const foldDownBtn = document.querySelector(".btn__expand-code");
 
 if(foldBtn){
   foldBtn.addEventListener("click", () => {
-    
     if(foldBtn.dataset.icon === "fold-down"){
       setIcon_ActionIcon(foldBtn,"fold-up");
       codeBlock.classList.remove("collapse");
+    } else {
+      setIcon_ActionIcon(foldBtn,"fold-down");
+      codeBlock.classList.add("collapse");
+    }
+  })
+}
+
+if(foldDownBtn){
+  foldDownBtn.addEventListener("click", () => {
+    console.log("evento");
+    if(foldBtn.dataset.icon === "fold-down"){
+      setIcon_ActionIcon(foldBtn,"fold-up");
+      codeBlock.classList.remove("collapse");
+      console.log("fold-down");
     } else {
       setIcon_ActionIcon(foldBtn,"fold-down");
       codeBlock.classList.add("collapse");
